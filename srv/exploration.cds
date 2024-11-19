@@ -14,7 +14,7 @@ service ExplorationService {
                 mostCommonPlanetType,
                 mostLikelyAlienType,
                 numberOfPlanets,
-                baseDrakeScore as drakeEquation,
+                baseDrakeScore * habitableZoneFactor * planetAlienCompatability * 100 as drakeEquation : Double,
                 AlienCivilisations    : Association to ContactedAlienCivilisations on AlienCivilisations.homeGalaxy.ID = $self.ID
         }
 
@@ -41,8 +41,9 @@ service ExplorationService {
 }
 
 define view DetailedGalaxiesView 
-    as select from datamodel.Galaxies as Galaxies
-    {
+    as select from datamodel.Galaxies as Galaxies 
+    join datamodel.HabitableZones as HabitableZones on HabitableZones.starType.ID = Galaxies.mostCommonStarType.ID 
+    join datamodel.CompabilityScores as CompabilityScores on CompabilityScores.planetType.ID = Galaxies.mostCommonPlanetType.ID and CompabilityScores.alienType.ID = Galaxies.mostLikelyAlienType.ID {
         key ID,
             name,
             distance,
@@ -56,5 +57,7 @@ define view DetailedGalaxiesView
             explorationReport,
             mostCommonStarType,
             mostCommonPlanetType,
-            mostLikelyAlienType
+            mostLikelyAlienType,                   
+            HabitableZones.percentage as habitableZoneFactor : datamodel.Percentage,
+            CompabilityScores.percentage as planetAlienCompatability : datamodel.Percentage
     };
