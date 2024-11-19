@@ -1,5 +1,7 @@
 import Controller from "sap/ui/core/mvc/Controller";
+import UIComponent from "sap/ui/core/UIComponent";
 import formatter from "../model/formatter";
+import Event from "sap/ui/base/Event";
 
 
 /**

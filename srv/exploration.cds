@@ -29,6 +29,12 @@ service ExplorationService {
 
     @readonly
     entity KnownAlienStatus            as projection on datamodel.AlienStatus;
+
+    @readonly
+    entity CompabilityScores           as projection on datamodel.CompabilityScores;
+
+    @readonly
+    entity KnownHabitableZones       as projection on datamodel.HabitableZones;
 }
 
 define view DetailedGalaxiesView 

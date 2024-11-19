@@ -37,6 +37,66 @@
             </f:DynamicPageHeader>
         </f:header>
         <f:content>
+            <Table id="galaxiesTable"
+                inset="false"
+                items="{
+                    path: '/KnownGalaxies',
+                    sorter: {
+                        path: 'distance'
+                    }
+                }"
+                itemPress=".onItemPress">
+                <infoToolbar>
+                    <OverflowToolbar>
+                        <Label text="all galaxies"/>
+                    </OverflowToolbar>
+                </infoToolbar>
+                <columns>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true">
+                        <Text text="name" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true">
+                        <Text text="distance" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                        hAlign="End">
+                        <Text text="numberOfSolarSystems" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                        hAlign="Center">
+                        <Text text="averagePlanetsPerSolar" />
+                    </Column>
+                    <Column
+                        hAlign="End">
+                        <Text text="explorationReport" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem vAlign="Middle">
+                        <cells>
+                            <Text
+                                text="{name}" />
+                            <Text
+                                text="{distance}" />
+                            <Text
+                                text="{numberOfSolarSystems}" />
+                            <Text
+                                text="{averagePlanetsPerSolar}" />
+                            <Text
+                                text="{explorationReport}" />
+                            
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
         </f:content>
     </f:DynamicPage>
 </mvc:View>
