@@ -17,7 +17,10 @@
     "@sap/cds-dk": "^8.4.1",
     "@sapui5/types": "^1.130.0",
     "cds-plugin-ui5": "^0.9.3",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "@types/node": "^22.0.0",
+    "typescript": "^5",
+    "@cap-js/cds-typer": ">=0.1"
   },
   "cds": {
     "requires": {
@@ -29,7 +32,8 @@
   "scripts": {
     "start": "cds-ts serve",
     "watch-frontend": "cds watch --open flexso.htf.frontend.frontend/index.html?sap-ui-xx-viewCache=false --livereload false --port 5000",
-    "cds-ts:watch": "cds-ts watch"
+    "cds-ts:watch": "cds-ts watch",
+    "watch": "cds-ts w"
   },
   "workspaces": [
     "app/*"

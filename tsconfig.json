@@ -15,8 +15,14 @@
     "strictPropertyInitialization": false,
     "esModuleInterop": true,
     "paths": {
-      "#cds-models/*": ["./@cds-models/*/index.ts"]
-    }
+      "#cds-models/*": [
+        "./@cds-models/*",
+        "./@cds-models/*/index.ts"
+      ]
+    },
+    "forceConsistentCasingInFileNames": true
   },
-  "include": ["./srv/**/*"]
+  "include": [
+    "./srv/**/*"
+  ]
 }
