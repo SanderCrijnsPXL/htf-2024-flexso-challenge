@@ -38,6 +38,8 @@ service ExplorationService {
 
     @readonly
     entity KnownHabitableZones       as projection on datamodel.HabitableZones;
+
+    action sendCommunicationRequest(galaxy_ID : String) returns String;
 }
 
 define view DetailedGalaxiesView 

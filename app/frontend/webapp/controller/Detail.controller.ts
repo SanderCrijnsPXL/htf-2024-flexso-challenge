@@ -2,6 +2,7 @@ import UIComponent from "sap/ui/core/UIComponent";
 import Controller from "sap/ui/core/mvc/Controller";
 import UI5Event from "sap/ui/base/Event";
 import formatter from "../model/formatter";
+import ODataModel from "sap/ui/model/odata/ODataModel";
 /**
  *  @namespace flexso.htf.frontend.frontend.controller
  */
@@ -28,5 +29,9 @@ export default class Detail extends Controller {
     (this.getOwnerComponent() as UIComponent)
       .getRouter()
       .navTo("RouteMaster", {});
+  }
+
+  public async sendRequest(): Promise<void> {
+    
   }
 }

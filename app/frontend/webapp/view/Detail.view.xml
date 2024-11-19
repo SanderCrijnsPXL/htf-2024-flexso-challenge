@@ -322,7 +322,7 @@
                     id="_IDGenButton2"
                     type="Emphasized"
                     text="Send Communication Request"
-                    press="sendRequest"
+                    press=".sendRequest"
                     visible="{
                             path: 'explorationReport',
                             targetType: 'any',
